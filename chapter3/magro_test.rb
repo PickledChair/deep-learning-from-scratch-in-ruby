@@ -1,4 +1,3 @@
-require "npy"
 require "magro"
 require "../dataset/mnist"
 
