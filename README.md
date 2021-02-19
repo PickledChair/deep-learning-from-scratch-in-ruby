@@ -31,10 +31,10 @@ Ruby: 3.0.0（rbenv でインストール）で動作確認しています。
 ### 依存ライブラリ
 
 - [Numo::NArray](https://github.com/ruby-numo/numo-narray)：数値計算ライブラリ（NumPy に相当）
-- [charty](https://github.com/red-data-tools/charty)：グラフ描画（バックエンドに matplotlib を使用）
+- [Charty](https://github.com/red-data-tools/charty)：グラフ描画（バックエンドに matplotlib を使用）
 - [Numo::Gnuplot](https://github.com/ruby-numo/numo-gnuplot)：グラフ描画。charty では画像を描画できなかったのでこちらも併用（バックエンドに gnuplot を使用）
-- [npy](https://github.com/ankane/npy)：Numo::NArray オブジェクトと NumPy の `.npy` ファイル及び `.npz` ファイルを相互変換できるライブラリ。
-- [magro](https://github.com/yoshoku/magro)：画像ファイル => Numo::NArray オブジェクト, Numo::NArray オブジェクト => 画像ファイルを実現するライブラリ
+- [Npy](https://github.com/ankane/npy)：Numo::NArray オブジェクトと NumPy の `.npy` ファイル及び `.npz` ファイルを相互変換できるライブラリ。
+- [Magro](https://github.com/yoshoku/magro)：画像ファイル => Numo::NArray オブジェクト, Numo::NArray オブジェクト => 画像ファイルを実現するライブラリ
   - ニューラルネットワークの実装では使っていないが、NArray と画像との相互変換が可能かどうか確認したかったので。
 
 
