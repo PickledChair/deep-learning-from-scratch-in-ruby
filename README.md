@@ -26,7 +26,7 @@ MacBook Air (early 2020) (Intel Mac), macOS Big Sur
 
 ## Ruby のバージョン・依存ライブラリ
 
-Ruby: 3.0.0（rbenv でインストール）
+Ruby: 3.0.0（rbenv でインストール）で動作確認しています。
 
 ### 依存ライブラリ
 
