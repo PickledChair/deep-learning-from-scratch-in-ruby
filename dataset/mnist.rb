@@ -127,7 +127,7 @@ module MNIST
 
       if normalize then
         ['train_img', 'test_img'].each do |key|
-          dataset[key] = Numo::SFloat.cast(dataset[key])
+          dataset[key] = Numo::DFloat.cast(dataset[key])
           dataset[key] /= 255.0
         end
       end
