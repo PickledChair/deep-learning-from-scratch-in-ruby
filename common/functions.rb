@@ -9,7 +9,7 @@ def step_function(x)
   return Numo::Int32.cast(x > 0)
 end
 
-def sigmoid_function(x)
+def sigmoid(x)
   return 1 / (1 + NM.exp(-x))
 end
 
