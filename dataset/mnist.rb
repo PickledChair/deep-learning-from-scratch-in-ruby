@@ -92,7 +92,7 @@ module MNIST
       download_mnist
       dataset = convert_numo_narray
       puts "Creating npz file ..."
-      Npy.save_npz("mnist.npz",
+      Npy.save_npz(SAVE_FILE,
                    train_img: dataset["train_img"],
                    train_label: dataset["train_label"],
                    test_img: dataset["test_img"],
