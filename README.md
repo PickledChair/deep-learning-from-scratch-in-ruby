@@ -7,7 +7,7 @@
 ## ディレクトリ構成
 
 - [x] chapter2
-- [ ] chapter3
+- [x] chapter3
 - [ ] chapter4
 - [ ] chapter5
 - [ ] chapter6
