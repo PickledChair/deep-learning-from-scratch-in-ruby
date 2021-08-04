@@ -2,7 +2,7 @@ require '../dataset/mnist'
 require '../common/functions'
 
 def get_data
-  *, (x_test, t_test) = MNIST.load_mnist(normalize: true,
+  _, (x_test, t_test) = MNIST.load_mnist(normalize: true,
                                          flatten: true,
                                          one_hot_label: false)
   return x_test, t_test
