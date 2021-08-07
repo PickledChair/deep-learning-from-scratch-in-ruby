@@ -53,5 +53,9 @@ def cross_entropy_error(y, t)
   end
 
   batch_size = y.shape[0]
-  return -NM.log(y[0...batch_size, t] + 1e-7).sum / batch_size
+  y_ = Numo::DFloat.zeros(batch_size, 1)
+  (0...batch_size).each { |i|
+    y_[i, 0] = y[i, t[i]]
+  }
+  return -NM.log(y_ + 1e-7).sum / batch_size
 end
