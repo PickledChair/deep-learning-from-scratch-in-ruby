@@ -36,6 +36,7 @@ Ruby: 3.0.0（rbenv でインストール）で動作確認しています。
 - [Npy](https://github.com/ankane/npy)：Numo::NArray オブジェクトと NumPy の `.npy` ファイル及び `.npz` ファイルを相互変換できるライブラリ。
 - [Magro](https://github.com/yoshoku/magro)：画像ファイル => Numo::NArray オブジェクト, Numo::NArray オブジェクト => 画像ファイルを実現するライブラリ
   - ニューラルネットワークの実装では使っていないが、NArray と画像との相互変換が可能かどうか確認したかったので。
+- [RandomBell](https://github.com/s-osa/random_bell)：正規乱数の生成
 
 
 
