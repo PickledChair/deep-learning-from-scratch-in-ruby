@@ -28,8 +28,10 @@ module GRAD
       else
         grad = x_.new_zeros
 
-        x_.each.with_index { |x, idx|
-          grad[idx] = numerical_gradient_1d(f, x)
+        idx = 0
+        x_.each_over_axis { |x|
+          grad[idx, 0...x_.shape[1]] = numerical_gradient_1d(f, x)
+          idx += 1
         }
 
         return grad
@@ -40,13 +42,14 @@ module GRAD
       h = 1e-4 # 0.0001
       grad = x.new_zeros
 
-      x.each_with_index { |_, *idx|
-        tmp_val = x[*idx]
+      x.each_with_index { |num, *idx|
+        tmp_val = num
         x[*idx] = tmp_val + h
         fxh1 = f.call(x) # f(x+h)
 
         x[*idx] = tmp_val - h
         fxh2 = f.call(x) # f(x-h)
+        p fxh2.shape
         grad[*idx] = (fxh1 - fxh2) / (2*h)
 
         x[*idx] = tmp_val
