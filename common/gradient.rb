@@ -49,7 +49,6 @@ module GRAD
 
         x[*idx] = tmp_val - h
         fxh2 = f.call(x) # f(x-h)
-        p fxh2.shape
         grad[*idx] = (fxh1 - fxh2) / (2*h)
 
         x[*idx] = tmp_val
