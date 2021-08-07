@@ -1,10 +1,5 @@
 require "numo/narray"
-NM = Numo::NMath
-
-def cross_entropy_error(y, t)
-  delta = 1e-7
-  return -(t * NM.log(y + delta)).sum
-end
+require "../common/functions.rb"
 
 if $0 == __FILE__
   # 「2」を正解とする
