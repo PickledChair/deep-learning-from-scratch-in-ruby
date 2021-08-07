@@ -21,8 +21,8 @@ if $0 == __FILE__
   x0 = Numo::DFloat.new(18).seq(-2.0, 0.25)
   x1 = Numo::DFloat.new(18).seq(-2.0, 0.25)
 
-  x = (x0.expand_dims(0) * Numo::DFloat.ones(x1.size, 1)).flatten
-  y = (x1.expand_dims(1) * Numo::DFloat.ones(1, x0.size)).flatten
+  x = (x0.expand_dims(0) * Numo::DFloat.ones(x1.size, 1)).reshape(x0.size**2)
+  y = (x1.expand_dims(1) * Numo::DFloat.ones(1, x0.size)).reshape(x0.size**2)
 
   grad = GRAD.numerical_gradient_2d(method(:function_2), Numo::DFloat.cast([x, y]).transpose).transpose
   File.open("gradient_2d.dat", "w") do |text|
