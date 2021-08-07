@@ -8,7 +8,7 @@
 
 - [x] chapter2
 - [x] chapter3
-- [ ] chapter4
+- [x] chapter4
 - [ ] chapter5
 - [ ] chapter6
 - [ ] chapter7

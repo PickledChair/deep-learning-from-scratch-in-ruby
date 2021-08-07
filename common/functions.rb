@@ -13,13 +13,28 @@ def sigmoid(x)
   return 1 / (1 + NM.exp(-x))
 end
 
+def sigmoid_grad(x)
+  return (1.0 - sigmoid(x)) * sigmoid(x)
+end
+
 def relu(x)
   return x.clip(0, nil)
 end
 
+def relu_grad(x)
+  grad = x.new_zeros
+  grad[(x>=0).where] = 1
+  return grad
+end
+
 def softmax(x)
-  x = x - x.max
-  return NM.exp(x) / NM.exp(x).sum
+  if x.shape.size > 1
+    x = x - x.max(axis: 1, keepdims: true)
+    return NM.exp(x) / NM.exp(x).sum(axis: 1, keepdims: true)
+  else
+    x = x - x.max
+    return NM.exp(x) / NM.exp(x).sum
+  end
 end
 
 def sum_squared_error(y, t)
