@@ -33,19 +33,7 @@ iters_num.times do |i|
 
   # パラメータの更新
   [:W1, :b1, :W2, :b2].each do |key|
-    # Numo::NArrayオブジェクトがAffineレイヤに値渡しされてしまっているらしいので、
-    # network.paramsのパラメータを更新してもAffineレイヤのパラメータが更新されない。
-    # 代わりに、姑息的にAffineレイヤのパラメータを直接更新した。
-    # network.params[key] -= learning_rate * grad[key]
-    if key == :W1
-      network.layers[:Affine1].w -= learning_rate * grad[key]
-    elsif key == :b1
-      network.layers[:Affine1].b -= learning_rate * grad[key]
-    elsif key == :W2
-      network.layers[:Affine2].w -= learning_rate * grad[key]
-    elsif key == :b2
-      network.layers[:Affine2].b -= learning_rate * grad[key]
-    end
+    network.params[key].inplace - learning_rate * grad[key]
   end
 
   loss = network.loss(x_batch, t_batch)
